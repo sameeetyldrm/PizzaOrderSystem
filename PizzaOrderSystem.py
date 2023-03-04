@@ -2,8 +2,6 @@
 from datetime import datetime #siparis zamanını verilere eklemek için kitaplık içi aktarıldı 
 import csv  #siparişlerin kaydı için kitaplık içi aktarıldı
 
-
-
 #menu.txt dosyasini ekrana yazdiracak fonkiyon olusturuldu.
 def menu_sec():
     with open('menu.txt', 'r') as f:
@@ -14,10 +12,6 @@ menu = open("menu.txt", "w")
 menu.write("* Lütfen Bir Pizza Tabanı Seçiniz:\n 1: Klasik\n 2: Margarita\n 3: TürkPizza\n 4: Sade Pizza\n\n* Ve Seçeceğiniz Sos:\n 11: Zeytin\n 12: Mantarlar\n 13: Keçi Peyniri\n 14: Et\n 15: Soğan\n 16: Mısır\n\n* Teşekkür ederiz!\"\n")
 menu.close()
 
-
-
-        
-        
 #....................................................................................................................
 
 #Pizzaların fiyat ve açıklamaları için superclass ve miras alacak subclasslar olustur.
@@ -47,7 +41,9 @@ class Turk_Pizza(Pizza):
 class Sade_Pizza(Pizza):
     def __init__(self,fiyat,aciklama):
         super().__init__(fiyat,aciklama)
+
 #....................................................................................................................
+
 #Sosların fiyat ve aciklamaları icin superclass ve miras alacak subclasslar olustur.
 class Sos:
     def __init__(self,fiyat,aciklama):
@@ -82,7 +78,8 @@ class Sogan(Sos):
 
 class Misir(Sos):
     def __init__(self,fiyat,aciklama):
-        super().__init__(fiyat,aciklama)      
+        super().__init__(fiyat,aciklama)     
+
 #.......................................................................................................
 class Decorator:
     def __init__(self,pizza:Pizza,sos:Sos):
@@ -94,9 +91,9 @@ class Decorator:
     
     def get_description(self):
         return self.pizza.get_description()+self.sos.get_description()
+    
 #.................................................................................................................
 #Pizza ve sosların fiyat ve aöıklama verileri işlendi
-
 
 Klasik_pizza=Klasik(75,"Sosis ve salam icerir")
 Margarita_pizza=Margarita(80,"Domates, mozzarella peyniri, fesleğen ve zeytinyağı icerir")
@@ -147,10 +144,6 @@ def sos_secimi(sos_cesidi):
         return misirsos
 
 #.................................................................................................................
-
-
-
-
 
 while True:
     menu_sec()  # Menü seçim fonksiyonunu çağırıldı ve menu ekrana basıldıç
