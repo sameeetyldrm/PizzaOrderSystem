@@ -156,9 +156,9 @@ while True:
             Pizza_cesidi=Pizza_cesidi
             break 
         elif Pizza_cesidi not in Pizzalist:
-            print("tekrar deneyiniz")
+            print("Tekrar deneyiniz!")
             continue
-
+    print(f"Pizza seciminiz:{Pizza_cesidi}. Sos secimine devam ediniz.")
     while True:
         sos_cesidi=input("Listeden istediginiz sosun kodunu veya adini tam olarak giriniz")
         Soslist=["11","Zeytin","12","Mantarlar","13","Keçi Peyniri","14","Et","15","Soğan","16","Mısır"]
@@ -166,9 +166,9 @@ while True:
             sos_cesidi=sos_cesidi
             break
         elif sos_cesidi not in Soslist:
-            print("tekrar deneyiniz")
+            print("Tekrar deneyiniz!")
             continue
-    
+    print(f"Sos seciminiz:{sos_cesidi}. Sos secimine devam ediniz.")
 
     #Seçimlerin classlar yardımı ile işlenir müşteriye fiyat ve acıklama yapar.
     
@@ -190,8 +190,8 @@ while True:
     def siparisi_verileri():
         with open('Orders_Database.csv',mode='a', newline='', encoding='utf-8') as siparis_dosyasi:
             yazici = csv.writer(siparis_dosyasi,delimiter=',')
-    
-            yazici.writerow([ad_soyad,tc_no,kart_no,kart_sifresi,siparis_tarihi,mus_siparisi])
+            yazici.writerow([f"Ad Soyad  ,  Tc No  ,  Kart No  ,  Kart Sifresi  ,  Siparis Tarihi  , Pizza adi-kodu  , Sos adi-kodu , Mus Siparisi"])
+            yazici.writerow([ad_soyad,tc_no,kart_no,kart_sifresi,siparis_tarihi,Pizza_cesidi,sos_cesidi,(mus_siparisi+"TL")])
     
     ekstra_siparis=input("Siparisi onayliyor musunuz? E/H")
     if ekstra_siparis=="H":
@@ -199,7 +199,7 @@ while True:
     elif ekstra_siparis=="E":
         break
             
-            
+
 siparisi_verileri()
 
 
