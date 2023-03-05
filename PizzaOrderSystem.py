@@ -199,6 +199,7 @@ while True:
     elif ekstra_siparis=="E":
         break
             
+            
 siparisi_verileri()
 
 
